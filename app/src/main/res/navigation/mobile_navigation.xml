@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="hu.attilavegh.dressit.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="hu.attilavegh.dressit.ui.home.ClothesFragment"
+        android:label="@string/title_clothes"
+        tools:layout="@layout/fragment_shape" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="hu.attilavegh.dressit.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="hu.attilavegh.dressit.ui.dashboard.ShapeFragment"
+        android:label="@string/title_shape"
+        tools:layout="@layout/fragment_clothes" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="hu.attilavegh.dressit.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="hu.attilavegh.dressit.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

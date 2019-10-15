@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.dashboard
+package hu.attilavegh.dressit.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,22 +10,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import hu.attilavegh.dressit.R
 
-class DashboardFragment : Fragment() {
+class ClothesFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var clothesViewModel: ClothesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(this, Observer {
+        clothesViewModel = ViewModelProviders
+            .of(this)
+            .get(ClothesViewModel::class.java)
+
+        val root = inflater.inflate(R.layout.fragment_clothes, container, false)
+        val textView: TextView = root.findViewById(R.id.text_clothes)
+
+        clothesViewModel.text.observe(this, Observer {
             textView.text = it
         })
+
         return root
     }
 }

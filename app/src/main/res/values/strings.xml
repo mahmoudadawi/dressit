@@ -1,4 +1,7 @@
 <resources>
+    <string name="facebook_application_id" translatable="false">766181310477873</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb766181310477873</string>
+
     <string name="app_name">DRESSit</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

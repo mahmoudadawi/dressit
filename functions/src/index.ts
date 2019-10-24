@@ -5,13 +5,15 @@ admin.initializeApp();
 
 exports.newDressNotification = functions.firestore.document('dresses/{dressId}')
     .onCreate((snap, context) => {
-        console.log('Bus has been updated');
+        console.log('A new dress is added');
 
         const newDress = snap.data();
 
         if (newDress && !newDress.url) {
             return;
         }
+
+        console.log(newDress);
     
         const payload = {
             data: {

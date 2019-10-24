@@ -11,6 +11,7 @@ import com.facebook.login.widget.LoginButton
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import hu.attilavegh.dressit.utilities.ApplicationUtils
 
 class LoginActivity : AppCompatActivity() {
 
@@ -23,14 +24,16 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        ApplicationUtils.createNotificationChannel(this)
+        ApplicationUtils.checkPlayServices(this)
+
         this.supportActionBar?.hide()
 
         callbackManager = CallbackManager.Factory.create()
         auth = FirebaseAuth.getInstance()
 
-        FirebaseAuth.getInstance().currentUser.let {
-            loadApp(it)
-        }
+        loadApp(auth.currentUser)
 
         val loginButton = findViewById<LoginButton>(R.id.login_button)
         loginButton.setPermissions(readPermission)
@@ -59,9 +62,6 @@ class LoginActivity : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-
-        val currentUser = auth.currentUser
-        loadApp(currentUser)
     }
 
     private fun handleFacebookAccessToken(token: AccessToken) {

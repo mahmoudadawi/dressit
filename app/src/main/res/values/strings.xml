@@ -1,6 +1,13 @@
 <resources>
+    <string name="facebook_app_id" translatable="false">766181310477873</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb766181310477873</string>
+
     <string name="app_name">DRESSit</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_clothes">My clothes</string>
+    <string name="title_shape">Shape</string>
+    <string name="title_profile">Profile</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="logo">Logo</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="logout">Logout</string>
 </resources>

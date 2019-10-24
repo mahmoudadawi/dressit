@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.notifications
+package hu.attilavegh.dressit.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,22 +10,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import hu.attilavegh.dressit.R
 
-class NotificationsFragment : Fragment() {
+class ShapeFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var shapeViewModel: ShapeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(this, Observer {
+        shapeViewModel = ViewModelProviders
+            .of(this)
+            .get(ShapeViewModel::class.java)
+
+        val root = inflater.inflate(R.layout.fragment_shape, container, false)
+        val textView: TextView = root.findViewById(R.id.text_shape)
+
+        shapeViewModel.text.observe(this, Observer {
             textView.text = it
         })
+
         return root
     }
 }

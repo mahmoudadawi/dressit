@@ -91,7 +91,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/heightData"
                 android:layout_width="56dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0"
@@ -112,7 +112,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/weightData"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"

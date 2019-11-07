@@ -34,4 +34,8 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="skip">Skip</string>
+    <string name="save_details">Save details</string>
+    <string name="hips">Hips</string>
+    <string name="sleeves">Sleeves</string>
+    <string name="hips_data_field">Hips data field</string>
 </resources>

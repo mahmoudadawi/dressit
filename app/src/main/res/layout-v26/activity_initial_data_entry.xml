@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".InitialDataEntryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="239dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/measurement_icon_image_desc"
+            app:srcCompat="@drawable/measurements_icon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:outlineProvider="none">
+
+            <TextView
+                android:id="@+id/gender_label"
+                android:layout_width="114dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/gender"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="182dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/size_label"
+                android:layout_width="114dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="@string/size"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/size_spinner"
+                android:layout_width="182dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_weight="0" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/height_label"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="@string/height"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/height_data"
+                android:inputType="number"
+                android:text="@string/_0"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/weight_label"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:text="@string/weight"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/weight_data"
+                android:inputType="textShortMessage|number|textPersonName"
+                tools:text="0" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:text="@string/save" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

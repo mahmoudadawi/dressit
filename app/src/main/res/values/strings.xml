@@ -10,4 +10,8 @@
     <string name="logo">Logo</string>
     <string name="profile_picture">Profile picture</string>
     <string name="logout">Logout</string>
+
+    <string name="notification_new_dress">Check out our new dress</string>
+    <string name="notification_new_dress_channel">new_dress</string>
+    <string name="notification_new_dress_channelId">notification_new_dress</string>
 </resources>

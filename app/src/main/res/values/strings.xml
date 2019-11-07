@@ -6,6 +6,7 @@
     <string name="title_clothes">My clothes</string>
     <string name="title_shape">Shape</string>
     <string name="title_profile">Profile</string>
+    <string name="title_measurements">Measurements</string>
     <string name="welcome_to">Welcome to</string>
     <string name="logo">Logo</string>
     <string name="profile_picture">Profile picture</string>
@@ -14,4 +15,27 @@
     <string name="notification_new_dress">Check out our new dress</string>
     <string name="notification_new_dress_channel">new_dress</string>
     <string name="notification_new_dress_channelId">notification_new_dress</string>
+    <string name="measurement_icon_image_desc">Measurement icon image</string>
+    <string name="gender">Gender</string>
+    <string name="size">Size</string>
+    <string name="height">Height</string>
+    <string name="height_data">Height data</string>
+    <string name="_0">0</string>
+    <string name="weight_data">Weight data</string>
+    <string name="save">Save</string>
+    <string name="weight">Weight</string>
+    <string name="height_text_field">Height text field</string>
+    <string name="weight_text_field">Weight text field</string>
+    <string name="chest">Chest</string>
+    <string name="waist">Waist</string>
+    <string name="chest_text_field">Chest text field</string>
+    <string name="waist_text_field">Waist text field</string>
+    <string name="title_activity_tutorial">TutorialActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="skip">Skip</string>
+    <string name="save_details">Save details</string>
+    <string name="hips">Hips</string>
+    <string name="sleeves">Sleeves</string>
+    <string name="hips_data_field">Hips data field</string>
 </resources>

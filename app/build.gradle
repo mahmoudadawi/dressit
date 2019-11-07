@@ -12,6 +12,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        javaParameters = true
     }
 
     compileSdkVersion 28
@@ -34,11 +35,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.firebase:firebase-auth:19.1.0'
-    implementation 'com.google.firebase:firebase-core:17.2.0'
-    implementation 'com.google.firebase:firebase-firestore:21.2.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-firestore:21.2.1'
     implementation 'com.google.firebase:firebase-messaging:20.0.0'
     implementation 'com.google.firebase:firebase-iid:20.0.0'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'com.facebook.android:facebook-login:5.8.0'
+    implementation 'com.android.support:appcompat-v7:28.1.1'
+    implementation 'com.android.support:design:28.1.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -52,7 +57,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
+
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.19.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation 'org.powermock:powermock:1.6.5'
+    testImplementation 'org.powermock:powermock-module-junit4:1.6.5'
+    testImplementation 'org.powermock:powermock-api-mockito:1.6.5'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

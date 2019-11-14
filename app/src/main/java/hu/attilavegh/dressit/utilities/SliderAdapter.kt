@@ -63,7 +63,7 @@ class SliderAdapter(private val context: Context): PagerAdapter() {
                 context.startActivity(intent)
             }
         } else {
-            tutorialDone.visibility  = View.INVISIBLE
+            tutorialDone.visibility  = View.GONE
         }
 
         container.addView(view)

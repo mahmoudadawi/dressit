@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/tutorial_image"
-        android:layout_width="match_parent"
-        android:layout_height="279dp"
-        android:layout_below="@+id/tutorial_title"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/tutorial_image"
-        app:srcCompat="@drawable/tutorial_image1" />
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="center_vertical">
 
     <TextView
         android:id="@+id/tutorial_title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/tutorial_image"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="56dp"
         android:gravity="center"
         android:text="@string/tutorial_title"
         android:textColor="@android:color/black"
@@ -31,27 +26,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tutorial_image"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="@string/tutorial_description"
         android:textSize="16sp" />
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/tutorial_image"
         android:layout_width="match_parent"
+        android:layout_height="279dp"
+        android:contentDescription="@string/tutorial_image"
+        app:srcCompat="@drawable/tutorial_image1" />
+
+    <Button
+        android:id="@+id/tutorial_done"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="255dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tutorial_description"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/tutorial_done"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/add_my_measurements" />
-    </LinearLayout>
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="85dp"
+        android:background="@color/colorPrimary"
+        android:padding="16dp"
+        android:text="@string/add_my_measurements" />
 
 </RelativeLayout>

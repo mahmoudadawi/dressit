@@ -9,7 +9,6 @@ import androidx.viewpager.widget.ViewPager
 import hu.attilavegh.dressit.R
 import hu.attilavegh.dressit.utilities.SliderAdapter
 
-
 class TutorialActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
 
     private lateinit var slider: ViewPager
@@ -27,27 +26,32 @@ class TutorialActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
         slider = findViewById(R.id.slider)
         tutorialStatus = findViewById(R.id.tutorial_status)
 
-        sliderAdapter = SliderAdapter(this)
-        slider.adapter = sliderAdapter
-        
-        addDotsIndicator(0)
-        slider.addOnPageChangeListener(this)
-    }
-
-    private fun addDotsIndicator(currentPosition: Int) {
-        tutorialStatus.removeAllViews()
         sliderStatusDots = listOf(
             TextView(this),
             TextView(this),
             TextView(this)
         )
 
+        sliderAdapter = SliderAdapter(this)
+        slider.adapter = sliderAdapter
+        
+        addDotsIndicator()
+        slider.addOnPageChangeListener(this)
+    }
+
+    private fun addDotsIndicator() {
         sliderStatusDots.forEach { dot ->
             dot.text = Html.fromHtml("&#8226;")
             dot.textSize = 35f
             dot.setTextColor(resources.getColor(R.color.indicator_unselected))
 
             tutorialStatus.addView(dot)
+        }
+    }
+
+    private fun colorDots(currentPosition: Int) {
+        sliderStatusDots.forEach { dot ->
+            dot.setTextColor(resources.getColor(R.color.indicator_unselected))
         }
 
         sliderStatusDots[currentPosition].setTextColor(resources.getColor(R.color.indicator_selected))
@@ -57,7 +61,7 @@ class TutorialActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
     }
 
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-        addDotsIndicator(position)
+        colorDots(position)
     }
 
     override fun onPageSelected(position: Int) {

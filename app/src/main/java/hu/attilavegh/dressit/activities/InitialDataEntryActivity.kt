@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit
+package hu.attilavegh.dressit.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,12 +6,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import hu.attilavegh.dressit.Application
+import hu.attilavegh.dressit.R
 import hu.attilavegh.dressit.models.UserModel
 import hu.attilavegh.dressit.services.firebase.FirebaseDataService
+import javax.inject.Inject
 
 class InitialDataEntryActivity : AppCompatActivity() {
 
-    private val firebaseService = FirebaseDataService()
+    @Inject lateinit var firebaseService: FirebaseDataService
 
     private lateinit var saveDataButton: Button
 
@@ -26,6 +29,8 @@ class InitialDataEntryActivity : AppCompatActivity() {
     private lateinit var sleevesData: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (applicationContext as Application).appComponent.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_initial_data_entry)
 

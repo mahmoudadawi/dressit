@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
-import hu.attilavegh.dressit.activities.InitialDataEntryActivity
+import hu.attilavegh.dressit.ui.activities.InitialDataEntryActivity
 import hu.attilavegh.dressit.R
 
 class SliderAdapter(private val context: Context): PagerAdapter() {
@@ -63,7 +63,7 @@ class SliderAdapter(private val context: Context): PagerAdapter() {
                 context.startActivity(intent)
             }
         } else {
-            tutorialDone.visibility  = View.INVISIBLE
+            tutorialDone.visibility  = View.GONE
         }
 
         container.addView(view)

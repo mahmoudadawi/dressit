@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent"
-    tools:context=".activities.TutorialActivity">
+    tools:context=".ui.activities.TutorialActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
@@ -21,7 +22,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="horizontal">
 

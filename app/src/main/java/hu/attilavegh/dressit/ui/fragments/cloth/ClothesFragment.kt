@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.home
+package hu.attilavegh.dressit.ui.fragments.cloth
 
 import android.os.Bundle
 import android.view.LayoutInflater

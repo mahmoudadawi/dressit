@@ -38,4 +38,9 @@
     <string name="hips">Hips</string>
     <string name="sleeves">Sleeves</string>
     <string name="hips_data_field">Hips data field</string>
+    <string name="tutorial_image">Tutorial image</string>
+    <string name="tutorial_title">Tutorial title</string>
+    <string name="textview">TextView</string>
+    <string name="tutorial_description">Tutorial description</string>
+    <string name="add_my_measurements">Add my measurements</string>
 </resources>

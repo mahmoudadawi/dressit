@@ -84,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loadApp(user: FirebaseUser?) {
         if (user !== null) {
-            val intent = Intent(this, InitialDataEntryActivity::class.java)
+            val intent = Intent(this, TutorialActivity::class.java)
             this.startActivity(intent)
             finish()
         }

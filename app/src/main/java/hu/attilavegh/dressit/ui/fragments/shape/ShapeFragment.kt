@@ -12,23 +12,15 @@ import hu.attilavegh.dressit.R
 
 class ShapeFragment : Fragment() {
 
-    private lateinit var shapeViewModel: ShapeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        shapeViewModel = ViewModelProviders
-            .of(this)
-            .get(ShapeViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_shape, container, false)
-        val textView: TextView = root.findViewById(R.id.text_shape)
 
-        shapeViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
 
         return root
     }

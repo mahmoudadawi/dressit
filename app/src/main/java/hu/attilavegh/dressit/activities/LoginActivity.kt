@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit
+package hu.attilavegh.dressit.activities
 
 import android.app.Activity
 import android.content.Intent
@@ -11,6 +11,7 @@ import com.facebook.login.widget.LoginButton
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import hu.attilavegh.dressit.R
 import hu.attilavegh.dressit.utilities.ApplicationUtils
 
 class LoginActivity : AppCompatActivity() {
@@ -24,7 +25,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        DaggerInjectorComponent.builder().build().inject(this)
 
         ApplicationUtils.createNotificationChannel(this)
         ApplicationUtils.checkPlayServices(this)

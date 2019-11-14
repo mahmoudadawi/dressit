@@ -12,7 +12,7 @@ import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.squareup.picasso.Picasso
-import hu.attilavegh.dressit.LoginActivity
+import hu.attilavegh.dressit.activities.LoginActivity
 import hu.attilavegh.dressit.R
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 

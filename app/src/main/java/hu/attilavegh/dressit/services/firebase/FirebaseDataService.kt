@@ -8,7 +8,7 @@ import io.reactivex.Observable
 import java.util.*
 import javax.inject.Inject
 
-class FirebaseDataService: @Inject FirebaseDataServiceShape {
+class FirebaseDataService @Inject constructor(): FirebaseDataServiceShape {
 
     private var database: FirebaseFirestore = FirebaseFirestore.getInstance()
 

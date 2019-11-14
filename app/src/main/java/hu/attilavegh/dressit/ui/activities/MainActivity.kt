@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.activities
+package hu.attilavegh.dressit.ui.activities
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

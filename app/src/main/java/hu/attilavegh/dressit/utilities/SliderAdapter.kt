@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
-import hu.attilavegh.dressit.activities.InitialDataEntryActivity
+import hu.attilavegh.dressit.ui.activities.InitialDataEntryActivity
 import hu.attilavegh.dressit.R
 
 class SliderAdapter(private val context: Context): PagerAdapter() {

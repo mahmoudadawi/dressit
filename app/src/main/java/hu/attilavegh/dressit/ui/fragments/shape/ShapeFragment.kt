@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.home
+package hu.attilavegh.dressit.ui.fragments.shape
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,23 +10,23 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import hu.attilavegh.dressit.R
 
-class ClothesFragment : Fragment() {
+class ShapeFragment : Fragment() {
 
-    private lateinit var clothesViewModel: ClothesViewModel
+    private lateinit var shapeViewModel: ShapeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        clothesViewModel = ViewModelProviders
+        shapeViewModel = ViewModelProviders
             .of(this)
-            .get(ClothesViewModel::class.java)
+            .get(ShapeViewModel::class.java)
 
-        val root = inflater.inflate(R.layout.fragment_clothes, container, false)
-        val textView: TextView = root.findViewById(R.id.text_clothes)
+        val root = inflater.inflate(R.layout.fragment_shape, container, false)
+        val textView: TextView = root.findViewById(R.id.text_shape)
 
-        clothesViewModel.text.observe(this, Observer {
+        shapeViewModel.text.observe(this, Observer {
             textView.text = it
         })
 

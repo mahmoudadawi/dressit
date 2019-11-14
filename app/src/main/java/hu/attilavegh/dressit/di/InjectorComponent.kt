@@ -1,7 +1,7 @@
 package hu.attilavegh.dressit.di
 
 import dagger.Component
-import hu.attilavegh.dressit.activities.InitialDataEntryActivity
+import hu.attilavegh.dressit.ui.activities.InitialDataEntryActivity
 
 @Component
 interface InjectorComponent {

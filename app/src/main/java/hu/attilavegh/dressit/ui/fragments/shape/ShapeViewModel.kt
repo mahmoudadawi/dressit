@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.dashboard
+package hu.attilavegh.dressit.ui.fragments.shape
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.profile
+package hu.attilavegh.dressit.ui.fragments.profile
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,7 @@ import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.squareup.picasso.Picasso
-import hu.attilavegh.dressit.activities.LoginActivity
+import hu.attilavegh.dressit.ui.activities.LoginActivity
 import hu.attilavegh.dressit.R
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 

@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import hu.attilavegh.dressit.activities.MainActivity
+import hu.attilavegh.dressit.ui.activities.MainActivity
 import hu.attilavegh.dressit.R
 
 const val NOTIFICATION_TOPIC = "new_dress"

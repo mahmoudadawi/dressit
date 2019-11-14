@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.ui.profile
+package hu.attilavegh.dressit.ui.fragments.profile
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

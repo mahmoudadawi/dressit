@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.activities
+package hu.attilavegh.dressit.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

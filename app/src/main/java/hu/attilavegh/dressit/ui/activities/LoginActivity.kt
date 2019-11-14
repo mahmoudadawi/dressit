@@ -1,4 +1,4 @@
-package hu.attilavegh.dressit.activities
+package hu.attilavegh.dressit.ui.activities
 
 import android.app.Activity
 import android.content.Intent

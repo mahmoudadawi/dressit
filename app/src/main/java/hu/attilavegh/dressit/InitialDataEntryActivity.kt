@@ -8,10 +8,11 @@ import android.widget.EditText
 import android.widget.Spinner
 import hu.attilavegh.dressit.models.UserModel
 import hu.attilavegh.dressit.services.firebase.FirebaseDataService
+import javax.inject.Inject
 
 class InitialDataEntryActivity : AppCompatActivity() {
 
-    private val firebaseService = FirebaseDataService()
+    @Inject private lateinit var firebaseService: FirebaseDataService
 
     private lateinit var saveDataButton: Button
 

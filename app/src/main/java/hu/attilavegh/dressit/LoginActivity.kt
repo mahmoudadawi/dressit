@@ -24,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        DaggerInjectorComponent.builder().build().inject(this)
 
         ApplicationUtils.createNotificationChannel(this)
         ApplicationUtils.checkPlayServices(this)

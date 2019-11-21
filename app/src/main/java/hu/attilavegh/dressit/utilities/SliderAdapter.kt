@@ -31,8 +31,8 @@ class SliderAdapter(private val context: Context): PagerAdapter() {
 
     private val descriptions = listOf(
         "You can choose several dresses from our collection and try it on virtually.",
-        "Check if the dress fits you in real time.",
-        "Before you start using the application, please provide us some measurement for better experience."
+        "Check if the dress fits you.",
+        "Before you start using the application, please provide your measurement for better experience."
     )
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {

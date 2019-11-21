@@ -1,6 +1,9 @@
 package hu.attilavegh.dressit.ui.fragments.shape
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.Selection
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +34,11 @@ class ShapeFragment : Fragment() {
     private lateinit var hipsData: EditText
     private lateinit var sleevesData: EditText
 
+    private lateinit var measurementFields: List<EditText>
+
+    private val measurementSuffix = " cm"
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         (context!!.applicationContext as Application).appComponent.inject(this)
 
@@ -49,10 +57,77 @@ class ShapeFragment : Fragment() {
         saveDataButton = root.findViewById(R.id.saveInitialDetails)
         saveDataButton.setOnClickListener{ saveData() }
 
+        measurementFields = listOf(
+            heightData, weightData, chestData, waistData, hipsData, sleevesData
+        )
+
+        measurementFields.forEach { field ->
+            field.setText(measurementSuffix)
+
+            field.addTextChangedListener(object : TextWatcher {
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+                    var editedText = s.toString()
+
+                    if (editedText.matches(Regex("^ cm.$"))) {
+                        field.setSelection(0)
+                        editedText = editedText.dropLast(1)
+                        field.setText(editedText)
+                    }
+
+                    if (!editedText.contains(measurementSuffix)) {
+                        field.setText(measurementSuffix)
+                        Selection.setSelection(field.text, field.text.length)
+                    }
+
+                    if (editedText.removeSuffix(" cm").length > 3) {
+                        field.setText(editedText.slice(0..2) + measurementSuffix)
+                        Selection.setSelection(field.text, 3)
+                    }
+                }
+            })
+
+            field.setOnClickListener {
+                if (field.text.length > 3) {
+                    field.setSelection(field.text.length - 3)
+                } else {
+                    field.setSelection(0)
+                }
+            }
+
+            field.setOnFocusChangeListener { view, hasFocus ->
+                if (hasFocus) {
+                    field.post {
+                        if (field.text.length > 3) {
+                            field.setSelection(field.text.length - 3)
+                        } else {
+                            field.setSelection(0)
+                        }
+                    }
+                }
+            }
+        }
+
+
         return root
     }
 
     fun saveData() {
+        var hasError = false
+
+        measurementFields.forEach {
+            if (it.text.length < 4 || it.text.startsWith("0") || !it.text.removeSuffix(measurementSuffix).matches(Regex("^[0-9]*$"))) {
+                it.error = "Invalid data"
+                hasError = true
+            }
+        }
+
+        if (hasError) {
+            return
+        }
+
         val userData = gatherUserData()
 
         val dataSubscription = firebaseService.setUser(userData).take(1).subscribe({
@@ -68,12 +143,16 @@ class ShapeFragment : Fragment() {
             "name",
             genderSpinner.selectedItem.toString(),
             sizeSpinner.selectedItem.toString(),
-            Integer.parseInt(heightData.text.toString()),
-            Integer.parseInt(weightData.text.toString()),
-            Integer.parseInt(chestData.text.toString()),
-            Integer.parseInt(waistData.text.toString()),
-            Integer.parseInt(hipsData.text.toString()),
-            Integer.parseInt(sleevesData.text.toString())
+            convertMeasurementText(heightData),
+            convertMeasurementText(weightData),
+            convertMeasurementText(chestData),
+            convertMeasurementText(waistData),
+            convertMeasurementText(hipsData),
+            convertMeasurementText(sleevesData)
         )
+    }
+
+    private fun convertMeasurementText(measurement: EditText): Int {
+        return Integer.parseInt(measurement.text.removeSuffix(" cm").toString())
     }
 }
